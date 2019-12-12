@@ -13,7 +13,7 @@ function Login() {
   const { setAuthTokens } = useAuth();
 
   function postLogin() {
-    axios.post("https://www.somePlace.com/auth/login", {  userName, password }).then(result => {
+    axios.post("https://www.somePlace.com/auth/login", {  userName, password }, { 'Content-Type': 'application/x-www-form-urlencoded' }).then(result => {
       if (result.status === 200) {
         setAuthTokens(result.data);
         setLoggedIn(true);
